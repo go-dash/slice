@@ -10,6 +10,7 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * `Uniq`
 * `Filter`
 * `Map`
+* `Reduce`
 * `Chain`
 * `Value`
 
@@ -54,6 +55,18 @@ double := func (element int, index int) int {
 }
 _int.Map([]int{1, 2, 3, 4}, double)
 // => []int{2, 4, 6, 8}
+```
+
+#### `_.Reduce(slice, func, initial)`
+
+Reduces the slice to a single value which is the accumulated result of running each element through the function.
+
+```go
+sum := func (acc int, element int, index int) int {
+  return acc + element
+}
+_int.Reduce([]int{1, 2, 3, 4}, sum, 0)
+// => int(10)
 ```
 
 #### `_.Chain(slice).Action().Action().Value()`
