@@ -1,0 +1,119 @@
+# Godash Slice Utilities
+
+An implementation of utility functions inspired by [Lodash](https://lodash.com) for the Go language, focusing on efficiency without the use of reflection.
+
+## Methods
+
+* `Reverse`
+* `Uniq`
+* `Filter`
+* `Chain`
+* `Value`
+
+#### `_.Reverse(slice)`
+
+Returns a new slice in reverse order.
+
+```go
+_int.Reverse([]int{1, 2, 3})
+// => []int{3, 2, 1}
+```
+
+#### `_.Uniq(slice)`
+
+Returns a new slice without duplicates (all elements are unique).
+
+```go
+_int.Uniq([]int{1, 2, 1, 3, 3})
+// => []int{1, 2, 3}
+```
+
+#### `_.Filter(slice, func)`
+
+Returns a new slice of all elements which the function predicate returns true for.
+
+```go
+even := func (element int, index int) bool {
+  return element % 2 == 0
+}
+_int.Filter([]int{1, 2, 3, 4}, even)
+// => []int{2, 4}
+```
+
+#### `_.Chain(slice).Action().Action().Value()`
+
+Chains multiple actions together and runs each on the result of the previous one. `Value()` returns the final result.
+
+```go
+_int.Chain([]int{1, 2, 1, 3}).Uniq().Reverse().Value()
+// => []int{3, 2, 1}
+```
+
+&nbsp;
+## Working with different types
+
+In order to avoid inefficient reflection, the library creates dedicated implementations for each type you need.
+
+In the original [Lodash](https://lodash.com), the library is used through the underscore character `_`. For example: `_.uniq()`.
+
+We keep the same convention, except that the underscore is followed by the type. For example: `_int.Uniq()` for integers, `_string.Uniq()` for strings.
+
+#### Primitive types (int, string, etc)
+
+Simply import the relevant subset of the library with the type appearing after the underscore:
+
+```go
+import "github.com/go-dash/slice/_string"
+
+func main() {
+	_string.Uniq([]string{"aa", "bb", "aa"})
+	// => []string{"aa", "bb"}
+}
+```
+
+#### Custom types (structs)
+
+Do the same thing, just add a commend afterwards of where the struct is defined.
+
+```go
+import "github.com/go-dash/slice/_Person" // github.com/my-user/my-repo/person
+
+func main() {
+	_Person.Uniq([]Person{Person{"John", 18}, Person{"Rachel", 17}, Person{"John", 18}})
+	// => []Person{Person{"John", 18}, Person{"Rachel", 17}}
+}
+```
+
+&nbsp;
+## Installation
+
+1. Install the `_gen` command line tool which generates code for the types you need:
+
+  ```
+  brew install go-dash/tools/gen
+  ```
+  > Verify with `_gen --version`
+  
+2. Go get the library:
+
+  ```
+  go get github.com/go-dash/slice
+  ```
+  
+3. In your project, import the relevant subsets for the types you need:
+
+  ```go
+  import (
+  	"github.com/go-dash/slice/_string"
+  	"github.com/go-dash/slice/_int"
+  )
+  ```
+  
+4. Once, generate the code for the library subsets by running the following in your project root:
+
+  ```
+  cd my-project
+  _gen
+  ```
+  
+A working example is available in the [test suite](test.sh).
