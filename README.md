@@ -117,3 +117,10 @@ func main() {
   ```
   
 A working example is available in the [test suite](test.sh).
+
+&nbsp;
+## Contributing
+
+This is mostly a thought experiment coming from the love of lodash and missing basic functional operations for slices in golang. Implementations based on [reflection](https://github.com/robpike/filter) miss the point IMO since they're inefficient in runtime. Since golang doesn't currently support generics, code generation is the closest we can come.
+
+If you like this approach and want to contribute to porting all of lodash to golang, don't hesitate to come help!  
