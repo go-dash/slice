@@ -120,7 +120,12 @@ func main() {
 A working example is available in the [test suite](test.sh).
 
 &nbsp;
-## Contributing
+## Running the tests
+
+From the root directory run `./test.sh`.
+
+&nbsp;
+## Motivation
 
 This is mostly a thought experiment coming from the love of lodash and missing basic functional operations for slices in golang. Implementations based on [reflection](https://github.com/robpike/filter) miss the point IMO since they're inefficient in runtime. Since golang doesn't currently support generics, code generation is the closest we can come.
 
