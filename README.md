@@ -9,6 +9,7 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * `Reverse`
 * `Uniq`
 * `Filter`
+* `Map`
 * `Chain`
 * `Value`
 
@@ -41,6 +42,18 @@ even := func (element int, index int) bool {
 }
 _int.Filter([]int{1, 2, 3, 4}, even)
 // => []int{2, 4}
+```
+
+#### `_.Map(slice, func)`
+
+Returns a new slice of all elements after the function has been executed on them.
+
+```go
+double := func (element int, index int) int {
+  return 2 * element
+}
+_int.Map([]int{1, 2, 3, 4}, double)
+// => []int{2, 4, 6, 8}
 ```
 
 #### `_.Chain(slice).Action().Action().Value()`
