@@ -10,6 +10,7 @@ An implementation of utility functions inspired by [Lodash](https://lodash.com) 
 * `Chain`
 * `Value`
 
+&nbsp;
 #### `_.Reverse(slice)`
 
 Returns a new slice in reverse order.
@@ -66,8 +67,8 @@ Simply import the relevant subset of the library with the type appearing after t
 import "github.com/go-dash/slice/_string"
 
 func main() {
-	_string.Uniq([]string{"aa", "bb", "aa"})
-	// => []string{"aa", "bb"}
+    _string.Uniq([]string{"aa", "bb", "aa"})
+    // => []string{"aa", "bb"}
 }
 ```
 
@@ -79,8 +80,8 @@ Do the same thing, just add a commend afterwards of where the struct is defined.
 import "github.com/go-dash/slice/_Person" // github.com/my-user/my-repo/person
 
 func main() {
-	_Person.Uniq([]Person{Person{"John", 18}, Person{"Rachel", 17}, Person{"John", 18}})
-	// => []Person{Person{"John", 18}, Person{"Rachel", 17}}
+    _Person.Uniq([]Person{Person{"John", 18}, Person{"Rachel", 17}, Person{"John", 18}})
+    // => []Person{Person{"John", 18}, Person{"Rachel", 17}}
 }
 ```
 
@@ -89,32 +90,32 @@ func main() {
 
 1. Install the `_gen` command line tool which generates code for the types you need:
 
-  ```
-  brew install go-dash/tools/gen
-  ```
-  > Verify with `_gen --version`
+    ```
+    brew install go-dash/tools/gen
+    ```
+    > Verify with `_gen --version`
   
 2. Go get the library:
 
-  ```
-  go get github.com/go-dash/slice
-  ```
+    ```
+    go get github.com/go-dash/slice
+    ```
   
 3. In your project, import the relevant subsets for the types you need:
 
-  ```go
-  import (
-  	"github.com/go-dash/slice/_string"
-  	"github.com/go-dash/slice/_int"
-  )
-  ```
+    ```go
+    import (
+        "github.com/go-dash/slice/_string"
+        "github.com/go-dash/slice/_int"
+    )
+    ```
   
 4. Once, generate the code for the library subsets by running the following in your project root:
 
-  ```
-  cd my-project
-  _gen
-  ```
+    ```
+    cd my-project
+    _gen
+    ```
   
 A working example is available in the [test suite](test.sh).
 
