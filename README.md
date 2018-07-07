@@ -2,6 +2,8 @@
 
 An implementation of utility functions inspired by [Lodash](https://lodash.com) for the Go language, focusing on efficiency without the use of reflection.
 
+Some of the motivation behind this library is discussed in this [blog post](https://medium.freecodecamp.org/lodash-in-go-language-without-reflection-1d64b5115486).
+
 ## Methods
 
 * `Reverse`
@@ -74,7 +76,7 @@ func main() {
 
 #### Custom types (structs)
 
-Do the same thing, just add a commend afterwards of where the struct is defined.
+Do the same thing, just add a comment afterwards of where the struct is defined.
 
 ```go
 import "github.com/go-dash/slice/_Person" // github.com/my-user/my-repo/person
