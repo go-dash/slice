@@ -11,6 +11,7 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * `Filter`
 * `Map`
 * `Reduce`
+* `Concat`
 * `Chain`
 * `Value`
 
@@ -67,6 +68,15 @@ sum := func (acc int, element int, index int) int {
 }
 _int.Reduce([]int{1, 2, 3, 4}, sum, 0)
 // => int(10)
+```
+
+#### `_.Concat(slice, slice)`
+
+Returns a new slice which is the first slice with the second concatenated at its end.
+
+```go
+_int.Concat([]int{1, 2, 3}, []int{4, 5})
+// => []int{1, 2, 3, 4, 5}
 ```
 
 #### `_.Chain(slice).Action().Action().Value()`
