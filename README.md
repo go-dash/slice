@@ -12,6 +12,8 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * `Map`
 * `Reduce`
 * `Concat`
+* `First`
+* `Last`
 * `Chain`
 * `Value`
 
@@ -77,6 +79,24 @@ Returns a new slice which is the first slice with the second concatenated at its
 ```go
 _int.Concat([]int{1, 2, 3}, []int{4, 5})
 // => []int{1, 2, 3, 4, 5}
+```
+
+#### `_.First(slice)`
+
+Returns the first element in the slice.
+
+```go
+_int.First([]int{1, 2, 3, 4})
+// => int(1)
+```
+
+#### `_.Last(slice)`
+
+Returns the last element in the slice.
+
+```go
+_int.Last([]int{1, 2, 3, 4})
+// => int(4)
 ```
 
 #### `_.Chain(slice).Action().Action().Value()`
