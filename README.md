@@ -187,4 +187,14 @@ From the root directory run `./test.sh`.
 
 This is mostly a thought experiment coming from the love of lodash and missing basic functional operations for slices in golang. Implementations based on [reflection](https://github.com/robpike/filter) miss the point IMO since they're inefficient in runtime. Since golang doesn't currently support generics, code generation is the closest we can come.
 
-If you like this approach and want to contribute to porting all of lodash to golang, don't hesitate to come help!  
+If you like this approach and want to contribute to porting all of lodash to golang, don't hesitate to come help!
+
+&nbsp;
+## License
+
+MIT
+
+&nbsp;
+## Who made this
+
+Godash is developed by the [Orbs.com](https://orbs.com) engineering team. Orbs is a public blockchain infrastructure for decentralized consumer applications with millions of users. Orbs core has an open source [implementation](https://github.com/orbs-network/orbs-network-go) in golang.
