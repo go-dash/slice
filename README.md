@@ -14,6 +14,8 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * [`Concat`](#_concatslice-slice)
 * [`First`](#_firstslice)
 * [`Last`](#_lastslice)
+* [`Drop`](#_dropslice-n)
+* [`DropRight`](#_droprightslice-n)
 * [`Chain`](#_chainsliceactionactionvalue)
 * [`Value`](#_chainsliceactionactionvalue)
 
@@ -97,6 +99,24 @@ Returns the last element in the slice.
 ```go
 _int.Last([]int{1, 2, 3, 4})
 // => int(4)
+```
+
+#### `_.Drop(slice, n)`
+
+Returns a new slice where n elements are dropped from the beginning.
+
+```go
+_int.Drop([]int{1, 2, 3, 4, 5}, 2)
+// => []int{3, 4, 5}
+```
+
+#### `_.DropRight(slice, n)`
+
+Returns a new slice where n elements are dropped from the end.
+
+```go
+_int.DropRight([]int{1, 2, 3, 4, 5}, 2)
+// => []int{1, 2, 3}
 ```
 
 #### `_.Chain(slice).Action().Action().Value()`
