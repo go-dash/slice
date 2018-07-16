@@ -2,6 +2,8 @@
 
 An implementation of utility functions inspired by [Lodash](https://lodash.com) for the Go language, focusing on efficiency without the use of reflection.
 
+All slice utilities opt for immutability so always a new copy of the array is returned instead of a different slice over the same array.
+
 Some of the motivation behind this library is discussed in this [blog post](https://medium.freecodecamp.org/lodash-in-go-language-without-reflection-1d64b5115486).
 
 ## Methods
@@ -22,7 +24,7 @@ Some of the motivation behind this library is discussed in this [blog post](http
 &nbsp;
 #### `_.Reverse(slice)`
 
-Returns a new slice in reverse order.
+Returns a new array in reverse order.
 
 ```go
 _int.Reverse([]int{1, 2, 3})
@@ -31,7 +33,7 @@ _int.Reverse([]int{1, 2, 3})
 
 #### `_.Uniq(slice)`
 
-Returns a new slice without duplicates (all elements are unique).
+Returns a new array without duplicates (all elements are unique).
 
 ```go
 _int.Uniq([]int{1, 2, 1, 3, 3})
@@ -40,7 +42,7 @@ _int.Uniq([]int{1, 2, 1, 3, 3})
 
 #### `_.Filter(slice, func)`
 
-Returns a new slice of all elements which the function predicate returns true for.
+Returns a new array of all elements which the function predicate returns true for.
 
 ```go
 even := func (element int, index int) bool {
@@ -52,7 +54,7 @@ _int.Filter([]int{1, 2, 3, 4}, even)
 
 #### `_.Map(slice, func)`
 
-Returns a new slice of all elements after the function has been executed on them.
+Returns a new array of all elements after the function has been executed on them.
 
 ```go
 double := func (element int, index int) int {
@@ -76,7 +78,7 @@ _int.Reduce([]int{1, 2, 3, 4}, sum, 0)
 
 #### `_.Concat(slice, slice)`
 
-Returns a new slice which is the first slice with the second concatenated at its end.
+Returns a new array which is the first slice with the second concatenated at its end.
 
 ```go
 _int.Concat([]int{1, 2, 3}, []int{4, 5})
@@ -103,7 +105,7 @@ _int.Last([]int{1, 2, 3, 4})
 
 #### `_.Drop(slice, n)`
 
-Returns a new slice where n elements are dropped from the beginning.
+Returns a new array where n elements are dropped from the beginning.
 
 ```go
 _int.Drop([]int{1, 2, 3, 4, 5}, 2)
@@ -112,7 +114,7 @@ _int.Drop([]int{1, 2, 3, 4, 5}, 2)
 
 #### `_.DropRight(slice, n)`
 
-Returns a new slice where n elements are dropped from the end.
+Returns a new array where n elements are dropped from the end.
 
 ```go
 _int.DropRight([]int{1, 2, 3, 4, 5}, 2)
