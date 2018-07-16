@@ -6,16 +6,16 @@ Some of the motivation behind this library is discussed in this [blog post](http
 
 ## Methods
 
-* `Reverse`
-* `Uniq`
-* `Filter`
-* `Map`
-* `Reduce`
-* `Concat`
-* `First`
-* `Last`
-* `Chain`
-* `Value`
+* [`Reverse`](#_reverseslice)
+* [`Uniq`](#_uniqslice)
+* [`Filter`](#_filterslice-func)
+* [`Map`](#_mapslice-func)
+* [`Reduce`](#_reduceslice-func-initial)
+* [`Concat`](#_concatslice-slice)
+* [`First`](#_firstslice)
+* [`Last`](#_lastslice)
+* [`Chain`](#_chainsliceactionactionvalue)
+* [`Value`](#_chainsliceactionactionvalue)
 
 &nbsp;
 #### `_.Reverse(slice)`
