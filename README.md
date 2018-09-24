@@ -20,6 +20,7 @@ Some of the motivation behind this library is discussed in this [blog post](http
 * [`DropRight`](#_droprightslice-n)
 * [`Chain`](#_chainsliceactionactionvalue)
 * [`Value`](#_chainsliceactionactionvalue)
+* [`Sort`](#_sortslice)
 
 &nbsp;
 #### `_.Reverse(slice)`
@@ -128,6 +129,18 @@ Chains multiple actions together and runs each on the result of the previous one
 ```go
 _int.Chain([]int{1, 2, 1, 3}).Uniq().Reverse().Value()
 // => []int{3, 2, 1}
+```
+
+#### `_.Sort(slice, func)`
+
+Returns a new array of all elements in their sorted order according to the provided comparison function.
+
+```go
+compare := func (a, b int) bool {
+  return a < b
+}
+_int.Sort([]int{2, 5, 8, 0, 1}, compare)
+// => []int{0, 1, 2, 5, 8}
 ```
 
 &nbsp;
